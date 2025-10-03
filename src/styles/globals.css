@@ -1,0 +1,216 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-a: #f00;
+    --color-b: #0f0;
+    --color-c: #00f;
+
+    --navbar-height: 64px;
+    --header-height: 112px;
+    --banner-height: 48px;
+    --sideMenu-width: 56px;
+    --sideMenu-widthExpanded: 232px;
+
+    --background: 0 0% 100%;
+    --background-dark: 234, 71%, 19%;
+    --background-light: 0 0% 100%;
+    --background-faint: 0 0% 97%;
+    --background-blue: 234 71% 19%;
+    --background-secondary: 200 5% 50%;
+    --foreground: 222.2 84% 4.9%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --text-light: 214 20% 69%;
+    --text-dark: 225 10% 24%;
+    --text-dark-secondary: #475467;
+    --text-darkBlue: 234 71% 19%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --border: 0 0% 85%;
+    --border-hovered: #808080;
+    --input: 217 16% 84%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-light: 0 0% 100%;
+    --primary-dark: 234 71% 8%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 0% 82%;
+    --secondary-light: 214 20% 93%;
+    --secondary-dark: #475467;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --tertiary: 0 0 80%;
+    --tertiary-light: 214 10% 48%;
+    --tertiary-dark: 0 0 56%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: ;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+    --offBlack: #262626;
+    --danger: 3 92% 63%;
+    --faintBlue: #eff4fd;
+    --skyBlue: #4f8df6;
+    --darkBlue: #0e1553;
+    --blue: #0062ff;
+    --darkBlueGreen: #075660;
+    --darkOrange: #902424;
+    --darkPurple: #3a2cad;
+    --purple: #5a48d4;
+    --lightPurple: #978de2;
+    --subtlePurple: #bfb7ee;
+    --faintPurple: #efedfb;
+    --ultraFaintPurple: #f7f5ff;
+    --faintGray: #f7f7f7;
+    --energeticPurple: #6366f1;
+    --green: #22c55e;
+    --greenEnergetic: #01ff39;
+    --lightGreen: #71dd8f;
+  }
+
+  .dark {
+    --background: 223 20% 14%;
+    --background-light: 233 10% 16%;
+    --background-faint: 224 21% 16%;
+    --background-blue: 220 45% 9%;
+    --background-secondary: 233 10% 16%;
+    --foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --text-light: var(--text-dark);
+    --text-dark: var(--text-light);
+    --text-darkBlue: var(--primary-light);
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --border: 215 24% 24%;
+    --input: 217.2 32.6% 17.5%;
+
+    --primary: 210 40% 98%;
+    --primary-dark: 210 0% 89%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-light: 214 20% 18%;
+    --secondary-dark: #9097a2;
+    --secondary-foreground: 210 40% 98%;
+
+    --tertiary-light: 214 20% 28%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: ;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+
+    --ring: 217.2 32.6% 17.5%;
+
+    --offBlack: #e6e6e6d3;
+    --danger: 356 72% 47%;
+    --skyBlue: #4f8df6;
+    --darkBlue: #a3a7e3;
+    --faintBlue: #e7edfe;
+    --lightPurple: #20185d;
+    --faintPurple: #110d31;
+  }
+
+  .dark .img-shadow {
+    width: 250px;
+    -webkit-filter: drop-shadow(5px 10px 5px #090a01e2);
+    filter: drop-shadow(5px 10px 5px #090a01e2);
+  }
+
+  .img-shadow {
+    width: 250px;
+    -webkit-filter: drop-shadow(5px 10px 5px #28281487);
+    filter: drop-shadow(5px 10px 5px #28281487);
+  }
+
+  .dark .simplebar-scrollbar::before {
+    background-color: white;
+  }
+
+  .dark .three-d {
+    text-shadow: 0px 5px 0px #533519;
+  }
+
+  .three-d {
+    text-shadow: none;
+  }
+
+  .custom-cursor-none * {
+    cursor: none !important;
+  }
+
+  .underline-animation-bar::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: green;
+    /* Hover underline color */
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .bg-security-center {
+    background-image: linear-gradient(45deg, transparent 0%, transparent 40%, rgba(147, 51, 234, 0.2) 50%, transparent 60%, transparent 100%),
+      linear-gradient(-45deg, transparent 0%, transparent 40%, rgba(59, 130, 246, 0.2) 50%, transparent 60%, transparent 100%),
+      linear-gradient(30deg, transparent 0%, transparent 40%, rgba(125, 211, 252, 0.2) 50%, transparent 60%, transparent 100%);
+  }
+
+  .hover-underline-animation:hover::after {
+    transform: scaleX(1);
+  }
+
+  .static-underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: red;
+    /* Static underline color */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+[data-radix-popper-content-wrapper] {
+  min-width: min-content !important;
+}
+
+[data-ut-element="allowed-content"] {
+  display: none !important;
+}

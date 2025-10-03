@@ -1,0 +1,24 @@
+.table {
+  border-collapse: collapse;
+}
+
+.table .thead .tr {
+  border-bottom: 1px solid #ccc;
+  position: relative;
+}
+
+.table .thead .tr::after {
+  content: "";
+  display: block;
+  height: 5px; /* Adds the visual spacer */
+  background-color: transparent;
+}
+
+/* Push the first tbody row down so it doesn't overlap the header border */
+.tbody tr:first-child {
+  transform: translateY(0px);
+}
+
+.tbody {
+  transform: translateY(2.5px);
+}

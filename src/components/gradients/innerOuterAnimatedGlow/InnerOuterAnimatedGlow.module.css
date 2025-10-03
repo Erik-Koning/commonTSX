@@ -1,0 +1,95 @@
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.container {
+  --animation-speed: 2.1s;
+  --background-opacity: 1;
+  --border-width: -2.5px;
+  --background-blur: 20px;
+}
+
+.innerCard {
+  border-radius: inherit;
+  position: relative;
+  opacity: 1;
+  border-radius: inherit;
+}
+
+/* Parent div styles */
+.innerParent {
+  border-radius: inherit;
+}
+
+.innerBg {
+  border-radius: inherit;
+  position: absolute;
+  background: white;
+}
+
+.gradientAnimation {
+  background: conic-gradient(
+    from var(--gradient-angle),
+    var(--energeticPurple),
+    var(--skyBlue),
+    var(--darkPurple),
+    var(--purple),
+    var(--blue),
+    var(--energeticPurple)
+  );
+  animation: rotation var(--animation-speed) linear infinite;
+}
+
+.card {
+  border-radius: inherit;
+  position: relative;
+  background: white;
+}
+
+.blur {
+  filter: blur(var(--background-blur));
+  opacity: var(--background-opacity);
+}
+
+.inset {
+  inset: var(--border-width);
+}
+
+.card::before,
+.card::after {
+  content: "";
+  position: absolute;
+  @apply inset;
+  z-index: -1;
+  @apply gradientAnimation;
+  /*
+    background: conic-gradient(
+    from var(--gradient-angle),
+    var(--energeticPurple),
+    var(--skyBlue),
+    var(--darkPurple),
+    var(--purple),
+    var(--darkBlue),
+    var(--energeticPurple)
+  );
+  animation: rotation 1.8s linear infinite;
+  */
+
+  /*background: conic-gradient(from 0.25turn at 50% 30%, #f69d3c, 10deg, #3f87a6, 350deg, #ebf8e1);*/
+  border-radius: inherit;
+}
+
+.card::after {
+  @apply blur;
+}
+
+@keyframes rotation {
+  0% {
+    --gradient-angle: 0deg;
+  }
+  100% {
+    --gradient-angle: 360deg;
+  }
+}

@@ -1,0 +1,4 @@
+/* ImportDataForm.module.css */
+[data-radix-popper-content-wrapper] {
+  min-width: min-content;
+}

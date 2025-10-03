@@ -1,0 +1,35 @@
+{
+  //"extends": ".../typescript-config/base.json",
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "baseUrl": ".", // baseUrl this file
+    "paths": {
+      "@common/*": ["./src/*"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.png",
+    "**/*.svg", "../app-core/src/components/ui/ConfigurableButton.tsx", "../app-core/src/components/ui/ClientSearch.tsx", "../app-core/src/components/ui/ClientCard.tsx", "../app-core/src/components/ui/OfficeInfoBox.tsx", "../app-core/src/components/ui/TemplateCard.tsx", "../app-core/src/utils/AI/callAIRequest.ts", "../app-core/src/components/ui/UserAuthForm.tsx", "../app-core/src/hooks/useAuthenticatePassword.ts", "../app-core/src/hooks/useGetAllCoworkers.ts", "../app-core/src/hooks/useGetAllPatients.ts", "../app-core/src/components/ui/RolePermissionsModal.tsx",
+  ],
+  "exclude": ["node_modules"]
+}
